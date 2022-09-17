@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif Verdana, Tahoma;
+    outline: none;
+}
+
+body {
+    background-color: #FFF;
+    font-family: sans-serif Verdana, Tahoma;
+}
+
+
+/**********************liste des articles*********************/
+
+.articles {
+    position: relative;
+    left: 25%;
+    width: 75%;
+    margin: 0;
+}
+
+.articles-title {
+    position: sticky;
+    top: 80px;
+}
+
+.articles-title a {
+    color: rgba(111, 207, 178, .8);
+    font-weight: bold;
+    font-size: 22pt;
+}
+
+.article {
+    margin: 5px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.article .article-title a {
+    font-weight: bold;
+    font-size: 20pt;
+    color: rgba(111, 207, 178, .8);
+}
+
+.article .article-extrait {
+    flex: none;
+    flex-wrap: nowrap;
+}
+
+.article .article-link {
+    font-size: 14pt;
+}
+
+.article hr {
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    margin: 1px 0;
+    color: rgba(111, 207, 178, .6);
+}
+
+
+/********************************Responsive petit écran********************************/
+
+@media screen and (max-width:1280px) {
+    .articles {
+        position: relative;
+        left: 25%;
+        width: 75%;
+        margin: 0;
+    }
+    .articles-title {
+        position: sticky;
+        top: 15px;
+    }
+}

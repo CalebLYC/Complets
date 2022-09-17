@@ -1,0 +1,299 @@
+body,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+    font-family: 'system-ui', sans-serif, Tahoma;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    background-color: #FFF;
+    font-family: sans-serif Verdana, Tahoma;
+}
+
+
+/********************************Menu de navigation********************************/
+
+
+/*header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}*/
+
+nav .logo {
+    width: 120px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: none;
+    color: #94F7E6;
+}
+
+header nav {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(111, 207, 178);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    z-index: 3;
+}
+
+nav div a {
+    display: inline-block;
+    color: rgba(255, 255, 255, .8);
+    font-size: 14pt;
+}
+
+nav .logo a {
+    font-weight: bold;
+    font-size: 22pt;
+}
+
+nav .menu a {
+    padding: 25px 15px;
+    border: solid 1px transparent;
+    transition: .3s;
+}
+
+
+/*nav .menu a:hover,
+nav .menu a.active {
+    border: solid 1px rgba(0, 0, 0, .6);
+    transition: .3s;
+}*/
+
+nav .menu a::after {
+    transition: .3s;
+}
+
+nav .menu a:hover::after,
+nav .menu a.active::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .6);
+    transition: .3s;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger span {
+    display: inline-block;
+    width: 25px;
+    height: 3px;
+    margin: 3px;
+    background-color: #FFF;
+}
+
+
+/*********************************************Corps du site: container*************************************/
+
+.container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/***************sidebar******************/
+
+.container .sidebar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 21%;
+    margin-top: 15px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 5px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar nav a {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 5px;
+    font-size: 16pt;
+    color: rgba(111, 207, 178, .9);
+    border: solid 1px transparent;
+    transition: .3s;
+}
+
+.sidebar nav a::after {
+    transition: .3s;
+}
+
+.sidebar nav a:hover::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(111, 207, 178, .5);
+    transition: .3s;
+}
+
+
+/*****Button de mode nuit  et barre de recherche*******/
+
+#nightModeButton {
+    margin: 5px 0 10px 3px;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .8);
+    border: solid 1px rgba(111, 207, 178, .8);
+    color: rgba(111, 207, 178, 1);
+    font-size: 12pt;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3S;
+}
+
+.sidebar #nightModeButton:hover {
+    font-size: 12.2pt;
+    transform: scale(1.05);
+    transition: .3S;
+}
+
+.sidebar input[type=search] {
+    width: 10em;
+    outline: none;
+    color: rgba(111, 207, 178, 1);
+}
+
+.sidebar input[type=search]::placeholder {
+    color: rgba(111, 207, 178, .9);
+}
+
+.sidebar input[type=submit] {
+    color: rgba(111, 207, 178, 1);
+    border: solid 1px rgba(111, 207, 178, .8);
+    cursor: pointer;
+    transition: .3S;
+}
+
+.sidebar input[type=submit]:hover {
+    transform: scale(1.03);
+    transition: .3S;
+}
+
+
+/**************************************************Footer*****************************/
+
+footer {
+    width: 100%;
+    height: 10vh;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+
+/********************************Responsive petit écran********************************/
+
+@media screen and (max-width:768px) {
+    header nav {
+        height: 100vh;
+    }
+    nav .logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    nav .menu {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-30%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: .5s;
+    }
+    header nav .hamburger {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        position: fixed;
+        background-color: black;
+    }
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .container .sidebar {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 20%;
+        height: 85vh;
+        margin-top: 15px;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 5px;
+    }
+    .sidebar nav a {
+        display: inline-block;
+        margin: 25px;
+        padding: 20px 5px;
+    }
+    .sidebar input[type=search] {
+        margin: 20px 0;
+        width: 5em;
+    }
+    .sidebar input[type=submit] {
+        margin: 1px;
+        width: 1em;
+    }
+    #nightModeButton {
+        margin: 3px;
+        width: 85px;
+        height: 60px;
+    }
+    /***************Affichage menu******************/
+    .show {
+        display: block;
+        opacity: 1;
+        transition: .5s;
+    }
+    .hide {
+        display: none;
+        opacity: 0;
+        transition: .5s;
+        z-index: 0;
+    }
+}
